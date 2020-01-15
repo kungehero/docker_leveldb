@@ -1,0 +1,8 @@
+version: '2.1'
+
+services:
+  docker_leveldb:
+    image: docker_leveldb
+    build: .
+    ports:
+      - 8096:8096

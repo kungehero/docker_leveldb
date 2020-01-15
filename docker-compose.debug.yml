@@ -1,0 +1,10 @@
+version: '2.1'
+
+services:
+  docker_leveldb:
+    image: docker_leveldb
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8096:8096
