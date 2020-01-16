@@ -23,7 +23,7 @@ func (level *LevelResource) WebService() *restful.WebService {
 		Consumes(restful.MIME_JSON).
 		Produces(restful.MIME_JSON)
 	tags := []string{"goleveldb"}
-	ws.Route(ws.PUT("/set").To(level.Put).
+	ws.Route(ws.PUT("/put").To(level.Put).
 		Doc("put level data").
 		Metadata(restfulspec.KeyOpenAPITags, tags).
 		Reads("").
@@ -40,3 +40,5 @@ func (level *LevelResource) Put(request *restful.Request, response *restful.Resp
 	}
 	response.WriteHeaderAndEntity(http.StatusCreated, "create ok!")
 }
+
+//Iterate over subset of database content with a particular prefix
